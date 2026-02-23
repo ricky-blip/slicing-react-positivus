@@ -1,6 +1,9 @@
+import { useState } from "react";
 import logo from "../assets/home/logo.png";
 
 function NavbarLayout() {
+  const [hoverButton, setHoverButton] = useState(false);
+
   const styles = {
     navbar: {
       display: "flex",
@@ -8,11 +11,15 @@ function NavbarLayout() {
       justifyContent: "space-between",
       padding: "20px 60px",
       backgroundColor: "#ffffff",
-      borderBottom: "1px solid #e0e0e0",
     },
     logo: {
       height: "36px",
       objectFit: "contain",
+    },
+    containerMenuandButton: {
+      display: "flex",
+      alignItems: "center",
+      gap: "40px",
     },
     menu: {
       display: "flex",
@@ -27,10 +34,10 @@ function NavbarLayout() {
       fontSize: "16px",
       fontWeight: "400",
     },
-    cta: {
-      backgroundColor: "#191a23",
-      color: "#ffffff",
-      border: "none",
+    button: {
+      backgroundColor: hoverButton ? "#191a23" : "transparent",
+      color: hoverButton ? "#ffffff" : "#191a23",
+      border: "1px solid #191a23",
       borderRadius: "14px",
       padding: "14px 28px",
       fontSize: "16px",
@@ -40,19 +47,50 @@ function NavbarLayout() {
 
   return (
     <nav style={styles.navbar}>
+      {/* Logo */}
       <div>
         <img src={logo} alt="logo" style={styles.logo} />
       </div>
 
-      <ul style={styles.menu}>
-        <li><a href="#about" style={styles.menuLink}>About</a></li>
-        <li><a href="#services" style={styles.menuLink}>Services</a></li>
-        <li><a href="#use-cases" style={styles.menuLink}>Use Cases</a></li>
-        <li><a href="#pricing" style={styles.menuLink}>Pricing</a></li>
-        <li><a href="#blog" style={styles.menuLink}>Blog</a></li>
-      </ul>
-
-      <button style={styles.cta}>Request a quote</button>
+      {/* Menu and Button */}
+      <div style={styles.containerMenuandButton}>
+        {/* Menu */}
+        <ul style={styles.menu}>
+          <li>
+            <a href="#about" style={styles.menuLink}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#services" style={styles.menuLink}>
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#use-cases" style={styles.menuLink}>
+              Use Cases
+            </a>
+          </li>
+          <li>
+            <a href="#pricing" style={styles.menuLink}>
+              Pricing
+            </a>
+          </li>
+          <li>
+            <a href="#blog" style={styles.menuLink}>
+              Blog
+            </a>
+          </li>
+        </ul>
+        {/* Button */}
+        <button
+          style={styles.button}
+          onMouseEnter={() => setHoverButton(true)}
+          onMouseLeave={() => setHoverButton(false)}
+        >
+          Request a quote
+        </button>
+      </div>
     </nav>
   );
 }
