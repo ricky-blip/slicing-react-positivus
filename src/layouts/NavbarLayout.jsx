@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "../assets/home/logo.png";
 
 function NavbarLayout() {
+  // State untuk mengelola hover pada button - [variable, function to update variable = useState(value awal)]
   const [hoverButton, setHoverButton] = useState(false);
 
   const styles = {

@@ -1,10 +1,12 @@
-import NavbarLayout from "../layouts/NavbarLayout"; 
+import NavbarLayout from "../layouts/NavbarLayout";
+import HeroLayout from "../layouts/HeroLayout";
 
 function HomePage() {
   return (
-    <NavbarLayout>
-      <h1>Selamat datang di HomePage!</h1>
-    </NavbarLayout>
+    <>
+      <NavbarLayout />
+      <HeroLayout />
+    </>
   );
 }
 
