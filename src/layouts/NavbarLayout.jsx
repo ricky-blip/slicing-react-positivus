@@ -11,10 +11,9 @@ function NavbarLayout() {
       alignItems: "center",
       justifyContent: "space-between",
       padding: "20px 60px",
-      backgroundColor: "#ffffff",
     },
     logo: {
-      height: "36px",
+      height: "38px",
       objectFit: "contain",
     },
     containerMenuandButton: {
@@ -23,6 +22,7 @@ function NavbarLayout() {
       gap: "40px",
     },
     menu: {
+      fontFamily: "'Poppins', sans-serif",
       display: "flex",
       gap: "40px",
       listStyle: "none",
@@ -36,6 +36,7 @@ function NavbarLayout() {
       fontWeight: "400",
     },
     button: {
+      fontFamily: "'Poppins', sans-serif",
       backgroundColor: hoverButton ? "#191a23" : "transparent",
       color: hoverButton ? "#ffffff" : "#191a23",
       border: "1px solid #191a23",
